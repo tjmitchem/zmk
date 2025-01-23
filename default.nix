@@ -17,11 +17,13 @@ makeScope newScope (self: with self; {
   # removed, as `west update-manifest` requires all dependencies to be fetched.
   update-manifest = callPackage ./nix/update-manifest { inherit west; };
 
-  combine_uf2 = a: b: name: pkgs.runCommandNoCC "combined_${a.name}_${b.name}" {}
-  ''
-    mkdir -p $out
-    cat ${a}/zmk.uf2 ${b}/zmk.uf2 > $out/${name}.uf2
-  '';
+  combine_uf2 = a: b:
+    let combine = name: pkgs.runCommandNoCC "combined_${a.name}_${b.name}" {}
+    ''
+      mkdir -p $out
+      cat ${a}/zmk.uf2 ${b}/zmk.uf2 > $out/${name}.uf2
+    '';
+  in (combine "glove80") // { __functor = self: name: combine name; };
 
   zephyr = callPackage ./nix/zephyr.nix { };
 
