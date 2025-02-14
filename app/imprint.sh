@@ -39,9 +39,12 @@ echo
 echo "Renaming artifacts"
 cp build/left/zephyr/zmk.uf2 build/artifacts/imprint_left-assimilator-bt-zmk.uf2
 cp build/right/zephyr/zmk.uf2 build/artifacts/imprint_right-assimilator-bt-zmk.uf2
-ls -l build/artifacts
-echo
 
+cp build/artifacts/imprint_left-assimilator-bt-zmk.uf2 /mnt/c/Users/terre/Desktop/firmware
+cp build/artifacts/imprint_right-assimilator-bt-zmk.uf2 /mnt/c/Users/terre/Desktop/firmware
+
+ls -l /mnt/c/Users/terre/Desktop/firmware
+echo
 
 echo "End time:   $(date)" >>  duration
 
