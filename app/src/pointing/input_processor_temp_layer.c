@@ -121,7 +121,7 @@ static int handle_keycode_state_changed(const zmk_event_t *eh) {
 
     const struct device *dev = DEVICE_DT_INST_GET(0);
     struct temp_layer_data *data = (struct temp_layer_data *)dev->data;
-    LOG_DBG("Setting last_tapped_timestamp to: %d", ev->timestamp);
+    LOG_DBG("Setting last_tapped_timestamp to: %lld", ev->timestamp);
     data->state.last_tapped_timestamp = ev->timestamp;
 
     return ZMK_EV_EVENT_BUBBLE;

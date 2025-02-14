@@ -33,7 +33,7 @@ static int underglow_indicators_process(struct zmk_behavior_binding *binding,
                                         struct zmk_behavior_binding_event event) {
     const struct device *dev = zmk_behavior_get_binding(binding->behavior_dev);
     struct underglow_indicators_data *data = dev->data;
-    struct underglow_indicators_config *config = dev->config;
+    const struct underglow_indicators_config *config = dev->config;
 
     if (data->indicators & BIT(config->indicator))
         return binding->param2;

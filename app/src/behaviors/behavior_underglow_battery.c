@@ -26,7 +26,7 @@ static int underglow_battery_init(const struct device *dev) { return 0; };
 static int underglow_battery_process(struct zmk_behavior_binding *binding,
                                         struct zmk_behavior_binding_event event) {
     const struct device *dev = zmk_behavior_get_binding(binding->behavior_dev);
-    struct underglow_battery_config *config = dev->config;
+    const struct underglow_battery_config *config = dev->config;
     int bat = zmk_battery_state_of_charge();
 
     if (bat >= config->threshold)
