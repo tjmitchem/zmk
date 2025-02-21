@@ -28,12 +28,12 @@ west zephyr-export
 echo
 
 echo "Building left side"
-west build -p -d build/left -b assimilator-bt -- -DSHIELD=imprint_left  -DZMK_CONFIG="/home/tmitchem/src/zmk-user-config-template" -DZMK_EXTRA_MODULES="/home/tmitchem/src/zmk-keyboards;/home/tmitchem/src/zmk-pmw3610-driver"
+west build -p -d build/left -b assimilator-bt -- -DSHIELD=imprint_left  -DZMK_CONFIG="/home/tmitchem/src/imprint-config" -DZMK_EXTRA_MODULES="/home/tmitchem/src/zmk-keyboards;/home/tmitchem/src/zmk-pmw3610-driver"
 echo
 
 
 echo "Building right side"
-west build -p -d build/right -b assimilator-bt -- -DSHIELD=imprint_right  -DZMK_CONFIG="/home/tmitchem/src/zmk-user-config-template" -DZMK_EXTRA_MODULES="/home/tmitchem/src/zmk-keyboards;/home/tmitchem/src/zmk-pmw3610-driver"
+west build -p -d build/right -b assimilator-bt -- -DSHIELD=imprint_right  -DZMK_CONFIG="/home/tmitchem/src/imprint-config" -DZMK_EXTRA_MODULES="/home/tmitchem/src/zmk-keyboards;/home/tmitchem/src/zmk-pmw3610-driver"
 echo
 
 echo "Renaming artifacts"
